@@ -26,7 +26,6 @@ class App extends Component {
   handleCalculation() {
     const { bucketX, bucketY } = this.state
     const sumTotal = +bucketX + +bucketY
-    console.log(sumTotal)
     this.setState({bucketX: '', bucketY: '', total: sumTotal})
   }
 
