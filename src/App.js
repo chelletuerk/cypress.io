@@ -37,7 +37,9 @@ class App extends Component {
           onChange={this.handleInputX}
           value={this.state.bucketX}
           type='number'
-          placeholder='Enter A Number'>
+          placeholder='Enter A Number'
+          className='inputX'
+        >
         </input>
         <input
           onChange={this.handleInputY}
