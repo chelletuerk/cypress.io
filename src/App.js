@@ -5,15 +5,21 @@ class App extends Component {
   constructor() {
     super()
     this.state = {
-      bucketX: 0,
-      bucketY: 0,
+      bucketX: '',
+      bucketY: '',
     }
     this.handleInputX = this.handleInputX.bind(this)
+    this.handleInputY = this.handleInputY.bind(this)
   }
 
   handleInputX(e) {
     this.setState({bucketX: e.target.value})
   }
+
+  handleInputY(e) {
+    this.setState({bucketY: e.target.value})
+  }
+
 
   render() {
     return (
@@ -24,6 +30,12 @@ class App extends Component {
         <input
           onChange={this.handleInputX}
           value={this.state.bucketX}
+          type='number'
+          placeholder='Enter A Number'>
+        </input>
+        <input
+          onChange={this.handleInputY}
+          value={this.state.bucketY}
           type='number'
           placeholder='Enter A Number'>
         </input>
