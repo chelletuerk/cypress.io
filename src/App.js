@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import Button from './Button'
 
 class App extends Component {
   constructor() {
@@ -18,6 +19,10 @@ class App extends Component {
 
   handleInputY(e) {
     this.setState({bucketY: e.target.value})
+  }
+
+  handleClick() {
+    console.log('bloop');
   }
 
 
@@ -39,6 +44,12 @@ class App extends Component {
           type='number'
           placeholder='Enter A Number'>
         </input>
+        <br />
+        <Button
+          className='button'
+          text='Calculate'
+          onClick={this.handleClick}
+        />
       </div>
     )
   }
