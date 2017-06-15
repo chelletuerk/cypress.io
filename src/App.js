@@ -11,6 +11,7 @@ class App extends Component {
     }
     this.handleInputX = this.handleInputX.bind(this)
     this.handleInputY = this.handleInputY.bind(this)
+    this.handleClick = this.handleClick.bind(this)
   }
 
   handleInputX(e) {

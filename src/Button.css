@@ -8,7 +8,6 @@ button {
   font-size: 20px;
   margin: 30px 20px;
   -webkit-transition: all 0.7s ease;
-  text-shadow: #b2dfdb 5px 5px 5px;
 }
 
 button:hover {
@@ -16,4 +15,6 @@ button:hover {
   transform:scale(1.1);
   background-color: #b2dfdb;
   color: #222;
+  text-shadow: #222 5px 5px 5px;
+
 }
