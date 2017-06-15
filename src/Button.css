@@ -1,0 +1,19 @@
+button {
+  height: 60px;
+  width: 200px;
+  border-radius: 5px;
+  border: solid #b2dfdb 3px;
+  background-color: white;
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-size: 20px;
+  margin: 30px 20px;
+  -webkit-transition: all 0.7s ease;
+  text-shadow: #b2dfdb 5px 5px 5px;
+}
+
+button:hover {
+  -webkit-transform:scale(1.1);
+  transform:scale(1.1);
+  background-color: #b2dfdb;
+  color: #222;
+}
