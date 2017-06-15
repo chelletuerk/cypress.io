@@ -8,10 +8,11 @@ class App extends Component {
     this.state = {
       bucketX: '',
       bucketY: '',
+      total: null,
     }
     this.handleInputX = this.handleInputX.bind(this)
     this.handleInputY = this.handleInputY.bind(this)
-    this.handleClick = this.handleClick.bind(this)
+    this.handleCalculation = this.handleCalculation.bind(this)
   }
 
   handleInputX(e) {
@@ -22,10 +23,12 @@ class App extends Component {
     this.setState({bucketY: e.target.value})
   }
 
-  handleClick() {
-    console.log('bloop');
+  handleCalculation() {
+    const { bucketX, bucketY } = this.state
+    const sumTotal = +bucketX + +bucketY
+    console.log(sumTotal)
+    this.setState({bucketX: '', bucketY: '', total: sumTotal})
   }
-
 
   render() {
     return (
@@ -48,10 +51,11 @@ class App extends Component {
           placeholder='Enter A Number'>
         </input>
         <br />
+        <h3>{this.state.total}</h3>
         <Button
           className='button'
           text='Calculate'
-          onClick={this.handleClick}
+          onClick={this.handleCalculation}
         />
       </div>
     )
