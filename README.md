@@ -2,6 +2,8 @@
 
 ## A small-scale application utilizing Create React App.  A User can enter two different 'bucket' amounts and the algorithm will calculate the intended measured amount.
 
+[Link to Production Site](http://waterbucket.herokuapp.com/)
+
 ## A brief run-down of the riddle:  
 
 #### You have a 5 liter bucket and a 3 liter bucket and the task is to measure exactly 4 liters using only these two buckets.  You may fill and empty the buckets as necessary and have an endless amount of water.  How are you able to measure exactly 4 liters?
