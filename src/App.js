@@ -33,7 +33,7 @@ class App extends Component {
       alert(
         'Please use positive numbers'
       )
-      this.setState({ parsedBucketX: '', parsedBucketY: '' })
+      this.setState({bucketX: '', bucketY: '' })
       return null
     }
 
@@ -41,7 +41,7 @@ class App extends Component {
       alert(
         'Please make the first bucket larger than the second bucket'
       )
-      this.setState({ parsedBucketX: '', parsedBucketY: '' })
+      this.setState({ bucketX: '', bucketY: '' })
       return null
     }
 
