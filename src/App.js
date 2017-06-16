@@ -77,7 +77,7 @@ class App extends Component {
           placeholder='Bucket #2 Amount'>
         </input>
         <br />
-        <h3>{this.state.total}</h3>
+        <h3>{this.state.total ? `Measured Amount: ${this.state.total}` : ''}</h3>
         <Button
           className='button'
           text='Calculate'
