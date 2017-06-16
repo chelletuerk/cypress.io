@@ -26,32 +26,37 @@ class App extends Component {
   handleCalculation() {
     const { bucketX, bucketY } = this.state
 
-    if (bucketX <= 0 || bucketY <= 0)  {
+    const parsedBucketX = parseInt(bucketX)
+    const parsedBucketY = parseInt(bucketY)
+
+    if (parsedBucketX <= 0 || parsedBucketY <= 0)  {
       alert(
         'Please use positive numbers'
       )
-      this.setState({ bucketX: '', bucketY: '' })
+      this.setState({ parsedBucketX: '', parsedBucketY: '' })
       return null
     }
 
-    if (bucketX < bucketY) {
+    if (parsedBucketX < parsedBucketY) {
       alert(
         'Please make the first bucket larger than the second bucket'
       )
-      this.setState({ bucketX: '', bucketY: '' })
+      this.setState({ parsedBucketX: '', parsedBucketY: '' })
       return null
     }
 
-    // amount moved from bucketX to bucketY, also current amount in bucketY
-    // assumed that bucketY is emptied
-    // assumed that bucketX is refilled
-    const bucketX1 = bucketX - bucketY
+    // amount moved from parsedBucketX to parsedBucketY, also current amount in parsedBucketY
+    // assumed that parsedBucketY is emptied
+    // assumed that parsedBucketX is refilled
+    const bucketX1 = parsedBucketX - parsedBucketY
 
-    // remaining space left to fill in bucketY
-    const remainingBucketYSpace = bucketY - bucketX1
+    // remaining space left to fill in parsedBucketY
+    const remainingBucketYSpace = (parsedBucketY - bucketX1 < 0)
+      ? 0
+      : parsedBucketY - bucketX1
 
     // final result
-    const final = bucketX - remainingBucketYSpace
+    const final = parsedBucketX - remainingBucketYSpace
 
     this.setState({bucketX: '', bucketY: '', total: final })
   }
