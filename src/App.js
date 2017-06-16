@@ -26,7 +26,7 @@ class App extends Component {
   handleCalculation() {
     const { bucketX, bucketY } = this.state
 
-    if (!(bucketX || bucketY) > 0) {
+    if (!(bucketX || bucketY) >= 0) {
       alert(
         'Please use positive numbers'
       )
