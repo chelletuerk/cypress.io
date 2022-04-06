@@ -64,12 +64,13 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <div className="App-header">
+        <div className="app-header">
           <h2>Water Bucket</h2>
         </div>
         <input
           onChange={this.handleInputX}
           value={this.state.bucketX}
+          id='input1'
           type='number'
           placeholder='Bucket #1 Amount'
           className='inputX'
@@ -79,7 +80,9 @@ class App extends Component {
           onChange={this.handleInputY}
           value={this.state.bucketY}
           type='number'
-          placeholder='Bucket #2 Amount'>
+          placeholder='Bucket #2 Amount'
+          className='inputX'
+        >
         </input>
         <br />
         <h3>{this.state.total ? `Measured Amount: ${this.state.total}` : ''}</h3>
