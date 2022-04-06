@@ -1,5 +1,11 @@
 describe('My First Test', () => {
-  it('Does not do much, but everything it needs to!', () => {
+  it('Doesnt do much, but everything it needs to!', () => {
     expect(true).to.equal(true)
+  })
+})
+
+describe('My First Failing Test', () => {
+  it('Fail Fail Fail!', () => {
+    expect(false).to.equal(true)
   })
 })
