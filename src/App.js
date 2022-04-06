@@ -26,8 +26,8 @@ class App extends Component {
   handleCalculation() {
     const { bucketX, bucketY } = this.state
 
-    const parsedBucketX = parseInt(bucketX)
-    const parsedBucketY = parseInt(bucketY)
+    const parsedBucketX = +bucketX
+    const parsedBucketY = +bucketY
 
     if (parsedBucketX <= 0 || parsedBucketY <= 0)  {
       alert(
