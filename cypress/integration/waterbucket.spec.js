@@ -3,9 +3,3 @@ describe('My First Test', () => {
     expect(true).to.equal(true)
   })
 })
-
-describe('My First Failing Test', () => {
-  it('Fail Fail Fail!', () => {
-    expect(false).to.equal(true)
-  })
-})
