@@ -86,7 +86,7 @@ class App extends Component {
         >
         </input>
         <br />
-        <h3>{this.state.total ? `Measured Amount: ${this.state.total}` : ''}</h3>
+        <h3 id='measured-amt'>{this.state.total ? `Measured Amount: ${this.state.total}` : ''}</h3>
         <Button
           className='button'
           text='Calculate'
