@@ -79,6 +79,7 @@ class App extends Component {
         <input
           onChange={this.handleInputY}
           value={this.state.bucketY}
+          id='input2'
           type='number'
           placeholder='Bucket #2 Amount'
           className='inputX'
