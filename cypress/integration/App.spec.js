@@ -126,7 +126,7 @@ describe('App behavior', () => {
     cy.get('#input2.inputX').type(`${inputText2}{enter}`)
     cy.get('#input2.inputX').should('have.length', 1)
     //need to change the targeted element to attr - best practices
-    cy.contains('Calculate').click().wait(500)
+    cy.contains('Calculate').click()
     cy.get('h3').should('have.text', 'Measured Amount: 4')
     .last()
   })
