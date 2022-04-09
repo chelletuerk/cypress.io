@@ -1,4 +1,4 @@
-describe('Create react app home', () => {
+describe('WaterBucket home', () => {
   beforeEach(() => {
     cy.request({
       url: 'http://localhost:3000',
@@ -11,7 +11,8 @@ describe('Create react app home', () => {
       }
     })
   })
-  it('renders learn the title Water Bucket', () => {
+
+  it('renders the title Water Bucket', () => {
     cy.contains('Water Bucket')
   })
 
@@ -19,6 +20,11 @@ describe('Create react app home', () => {
     cy.contains('Calculate')
     .parent()
     .find('button')
+  })
+
+  it('h3 tag should not have text', () => {
+    cy.get('h3')
+    .should('not.have.text')
   })
 })
 
@@ -41,12 +47,11 @@ describe('Input 1', () => {
     //need to change the targeted element to attr - best practices
   })
 
-  it('should have a value', () => {
-    const newItem = '5'
-    cy.get('#input1.inputX').type(`${newItem}{enter}`)
-    cy.get('#input1.inputX')
+  it('can take an integer value', () => {
+    const inputText = '2'
+    cy.get('#input1.inputX').type(`${inputText}{enter}`)
+    cy.get('#input1.inputX').should('have.length', 1)
     //need to change the targeted element to attr - best practices
-      .should('have.length', 1)
       .last()
   })
 })
@@ -70,12 +75,11 @@ describe('Input 2', () => {
     //need to change the targeted element to attr - best practices
   })
 
-  it('should have a value', () => {
-    const newItem = '3'
-    cy.get('#input2.inputX').type(`${newItem}{enter}`)
-    cy.get('#input2.inputX')
+  it('can take an integer value', () => {
+    const inputText = '1'
+    cy.get('#input2.inputX').type(`${inputText}{enter}`)
+    cy.get('#input2.inputX').should('have.length', 1)
     //need to change the targeted element to attr - best practices
-      .should('have.length', 1)
       .last()
   })
 })
@@ -113,19 +117,17 @@ describe('App behavior', () => {
     })
   })
 
-  it('should have a value', () => {
-    const newItem = '5'
-    cy.get('#input1.inputX').type(`${newItem}{enter}`)
-    cy.get('#input1.inputX')
+  it('can calculate inputs on submit and render h3 text', () => {
+    const inputText = '5'
+    cy.get('#input1.inputX').type(`${inputText}{enter}`)
+    cy.get('#input1.inputX').should('have.length', 1)
     //need to change the targeted element to attr - best practices
-      .should('have.length', 1)
-      const newItem2 = '3'
-      cy.get('#input2.inputX').type(`${newItem2}{enter}`)
-      cy.get('#input2.inputX')
-      //need to change the targeted element to attr - best practices
-        .should('have.length', 1)
-        .last()
-      cy.contains('Calculate').click()
-      .last()
+    const inputText2 = '3'
+    cy.get('#input2.inputX').type(`${inputText2}{enter}`)
+    cy.get('#input2.inputX').should('have.length', 1)
+    //need to change the targeted element to attr - best practices
+    cy.contains('Calculate').click().wait(500)
+    cy.get('h3').should('have.text', 'Measured Amount: 4')
+    .last()
   })
 })
