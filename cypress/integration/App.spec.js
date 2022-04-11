@@ -51,7 +51,6 @@ describe('Input 1', () => {
     const inputText = '2'
     cy.get('#input1.inputX').type(`${inputText}{enter}`)
     cy.get('#input1.inputX').should('have.length', 1)
-    //need to change the targeted element to attr - best practices
       .last()
   })
 })
@@ -79,7 +78,6 @@ describe('Input 2', () => {
     const inputText = '1'
     cy.get('#input2.inputX').type(`${inputText}{enter}`)
     cy.get('#input2.inputX').should('have.length', 1)
-    //need to change the targeted element to attr - best practices
       .last()
   })
 })
@@ -125,7 +123,6 @@ describe('App behavior', () => {
     const inputText2 = '3'
     cy.get('#input2.inputX').type(`${inputText2}{enter}`)
     cy.get('#input2.inputX').should('have.length', 1)
-    //need to change the targeted element to attr - best practices
     cy.contains('Calculate').click()
     cy.get('h3').should('have.text', 'Measured Amount: 4')
     .last()
